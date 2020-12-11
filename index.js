@@ -5,7 +5,9 @@ const user = require('./routes/user');
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-app.use(cors());
+app.use(cors({
+    exposedHeaders: ['x-auth-token'],
+}));
 app.use(express.json());
 
 //routing
