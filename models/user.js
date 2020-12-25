@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const {diaryNoteSchema} = require("./diaryNote");
+const config = require('config');
+const jwt = require("jsonwebtoken");
 
 const userSchema = new mongoose.Schema({
     username: String,
@@ -12,5 +14,10 @@ const userSchema = new mongoose.Schema({
     },
     diaryNotes: [diaryNoteSchema]
 });
+
+userSchema.methods.generateJwt = function () {
+    let token = jwt.sign({ _id: this._id }, config.get("jwtPrivateKey"));
+    return token;
+}
 const User = mongoose.model("User", userSchema);
 module.exports = User;
