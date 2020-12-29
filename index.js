@@ -5,6 +5,8 @@ const user = require("./routes/user");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const errorHandler = require("./middleware/errorHandler");
+const prod = require('./prod');
+prod(app);
 require("express-async-errors");
 const config = require("config");
 

@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
+  "engines": {
+    "node":"14.15.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ThomasTopuz/diaryAppBackend.git"
@@ -19,10 +22,12 @@
   "homepage": "https://github.com/ThomasTopuz/diaryAppBackend#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "compression": "^1.7.4",
     "config": "^3.3.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
+    "helmet": "^4.3.1",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.20",
     "mongoose": "^5.11.4",
