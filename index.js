@@ -32,7 +32,7 @@ app.use(errorHandler); // reference, not calling!
 
 //database connection
 mongoose
-  .connect(config.get("db"))
+  .connect("mongodb+srv://thomas:1234@diaryapp.1dlx9.mongodb.net/diaryApp?retryWrites=true&w=majority")
   .then(() => {
     console.log("running");
   })
