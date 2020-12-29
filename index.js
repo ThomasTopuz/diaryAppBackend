@@ -5,11 +5,11 @@ const user = require("./routes/user");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const errorHandler = require("./middleware/errorHandler");
-const prod = require('./prod');
+const prod = require("./prod");
 prod(app);
 require("express-async-errors");
 const config = require("config");
-console.log(config.get("diaryApp_db"));
+console.log(config.get("db"));
 
 if (!config.get("jwtPrivateKey")) {
   console.error("jwt privatekey not defined!");
@@ -32,7 +32,7 @@ app.use(errorHandler); // reference, not calling!
 
 //database connection
 mongoose
-  .connect(config.get("diaryApp_db"))
+  .connect(config.get("db"))
   .then(() => {
     console.log("running");
   })
