@@ -1,3 +1,4 @@
 {
-  "jwtPrivateKey": "dairyApp_jwtPrivateKey"
+  "jwtPrivateKey": "dairyApp_jwtPrivateKey",
+  "db":"diaryApp_db"
 }
