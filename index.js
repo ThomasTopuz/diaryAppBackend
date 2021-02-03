@@ -36,7 +36,7 @@ app.use(errorHandler); // reference, not calling!
 
 //database connection
 mongoose
-  .connect("mongodb://mongo-db:27017/")
+  .connect("mongodb://mongo:27017/")
   .then(() => {
     console.log("running");
   })
