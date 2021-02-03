@@ -21,9 +21,13 @@ app.use(
     exposedHeaders: ["x-auth-token"], //returns the x-auth-token
   })
 );
+app.use(cors())
 app.use(express.json());
 
 //routing
+app.get("/test", (req,res)=>{
+    res.send("test works")
+})
 app.use("/api/v1/diary", diary);
 app.use("/api/v1/user", user);
 
@@ -32,7 +36,7 @@ app.use(errorHandler); // reference, not calling!
 
 //database connection
 mongoose
-  .connect("mongodb+srv://thomas:1234@diaryapp.1dlx9.mongodb.net/diaryApp?retryWrites=true&w=majority")
+  .connect("mongodb://mongo-db:27017/")
   .then(() => {
     console.log("running");
   })
