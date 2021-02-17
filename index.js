@@ -15,7 +15,7 @@ if (!config.get("jwtPrivateKey")) {
   console.error("jwt privatekey not defined!");
   process.exit(1);
 }
-if (!config.get("diaryApp_db")) {
+if (!config.get("db")) {
     console.error("db connection string is not defined!");
     process.exit(1);
 }
