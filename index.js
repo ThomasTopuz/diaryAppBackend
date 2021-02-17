@@ -15,6 +15,10 @@ if (!config.get("jwtPrivateKey")) {
   console.error("jwt privatekey not defined!");
   process.exit(1);
 }
+if (!config.get("diaryApp_db")) {
+    console.error("db connection string is not defined!");
+    process.exit(1);
+}
 
 app.use(
   cors({
@@ -26,7 +30,7 @@ app.use(express.json());
 
 //routing
 app.get("/test", (req,res)=>{
-    res.send("test works")
+    res.send("test works edit")
 })
 app.use("/api/v1/diary", diary);
 app.use("/api/v1/user", user);
@@ -36,7 +40,7 @@ app.use(errorHandler); // reference, not calling!
 
 //database connection
 mongoose
-  .connect("mongodb://mongo:27017/")
+  .connect(config.get('db'))
   .then(() => {
     console.log("running");
   })
